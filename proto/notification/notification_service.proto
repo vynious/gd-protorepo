@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+
+import "notification/notification_message.proto";
+
+
+service NotificationService {
+  rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse);
+}
+
+message CreateNotificationRequest {
+  Notification notification = 1;
+}
+
+message CreateNotificationResponse {}
+
