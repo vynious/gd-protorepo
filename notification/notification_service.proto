@@ -3,7 +3,7 @@ syntax = "proto3";
 
 import "notification/notification_message.proto";
 package notification;
-option go_package = "<REPLACE WITH YOUR GITHUB PROJECT DIRECTORY PATH>";
+option go_package = "/proto_files/notification"; //REPLACE WITH YOUR GITHUB PROJECT DIRECTORY PATH
 
 service NotificationService {
   rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse) {};

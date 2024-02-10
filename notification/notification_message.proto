@@ -1,6 +1,7 @@
 syntax = "proto3";
 package notification;
-option go_package = "<REPLACE WITH YOUR GITHUB PROJECT DIRECTORY PATH>";
+
+option go_package = "/proto_files/notification"; //REPLACE WITH YOUR GITHUB PROJECT DIRECTORY PATH
 import "google/protobuf/timestamp.proto";
 
 message Notification {
