@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "/proto_files";
+
+import "google/protobuf/timestamp.proto";
+
+
+message Product {
+  string id = 1;
+  string name = 2;
+  uint32 stock = 3;
+  string description = 4;
+  string category = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}

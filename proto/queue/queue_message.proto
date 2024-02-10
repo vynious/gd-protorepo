@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "/proto_files";
+
+import "google/protobuf/timestamp.proto";
+
+
+
+
+message QueueTicket {
+  string id = 1;
+  uint32 number = 2;
+}

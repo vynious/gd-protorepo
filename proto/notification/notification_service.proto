@@ -5,7 +5,7 @@ import "notification/notification_message.proto";
 
 
 service NotificationService {
-  rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse);
+  rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse) {};
 }
 
 message CreateNotificationRequest {
