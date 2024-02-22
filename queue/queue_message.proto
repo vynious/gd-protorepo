@@ -1,7 +1,6 @@
 syntax = "proto3";
-
-option go_package = "/proto_files";
-
+package queue;
+option go_package = "/proto_files/queue";
 import "google/protobuf/timestamp.proto";
 
 
