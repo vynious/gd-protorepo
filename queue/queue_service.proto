@@ -12,11 +12,11 @@ message JoinQueueRequest {
 }
 
 message JoinQueueResponse {
-  QueueTicket ticket = 1;
+  Ticket ticket = 1;
 }
 
 message RetrieveNextRequest {}
 
 message RetrieveNextResponse {
-  QueueTicket ticket = 1;
+  Ticket ticket = 1;
 }
