@@ -1,0 +1,22 @@
+syntax="proto3";
+
+import "queue/queue_message.proto";
+
+service QueueService {
+  rpc JoinQueue (JoinQueueRequest) returns (JoinQueueResponse) {}
+  rpc RetrieveNext (RetrieveNextRequest) returns (RetrieveNextResponse) {}
+}
+
+message JoinQueueRequest {
+  string UserID = 1;
+}
+
+message JoinQueueResponse {
+  QueueTicket ticket = 1;
+}
+
+message RetrieveNextRequest {}
+
+message RetrieveNextResponse {
+  QueueTicket ticket = 1;
+}
