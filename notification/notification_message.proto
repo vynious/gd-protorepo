@@ -5,8 +5,9 @@ option go_package = "/proto_files/notification"; //REPLACE WITH YOUR GITHUB PROJ
 import "google/protobuf/timestamp.proto";
 
 message Notification {
+  string ID = 1;
   string TelegramHandle = 2;
-  string EventType = 3;
+  string Type = 3;
   string Content = 4;
   google.protobuf.Timestamp CreatedAt = 5;
 }

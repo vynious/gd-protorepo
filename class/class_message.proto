@@ -1,0 +1,15 @@
+syntax = 'proto3';
+package class;
+
+
+import "google/protobuf/timestamp.proto";
+
+
+message Class {
+  string ID = 1;
+  string Type = 2;
+  string Name = 3;
+  string Duration = 4;
+  string Description = 5;
+  google.protobuf.Timestamp DateTime = 6;
+}
