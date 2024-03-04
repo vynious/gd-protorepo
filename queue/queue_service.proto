@@ -10,7 +10,7 @@ service QueueService {
 }
 
 message JoinQueueRequest {
-  string UserID = 1;
+  string user_id = 1;
 }
 
 message JoinQueueResponse {
