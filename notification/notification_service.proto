@@ -10,8 +10,12 @@ service NotificationService {
 }
 
 message CreateNotificationRequest {
-  Notification notification = 1;
+  string telegram_handle = 1;
+  string notification_type = 2;
+  string content = 3;
 }
 
-message CreateNotificationResponse {}
+message CreateNotificationResponse {
+  Notification notification = 1;
+}
 

@@ -14,7 +14,8 @@ service BookingService {
 }
 
 message CreateBookingRequest {
-  string UserID = 1;
+  string user_id = 1;
+  string class_id = 2;
 }
 
 message CreateBookingResponse {
@@ -22,7 +23,7 @@ message CreateBookingResponse {
 }
 
 message CancelBookingRequest {
-  string ID = 1; // booking ID
+  string id = 1; // booking ID
 }
 
 message CancelBookingResponse {}

@@ -7,7 +7,7 @@ import "google/protobuf/timestamp.proto";
 
 
 message Ticket {
-  int64  QueueNumber = 2;
-  string UserID = 3;
+  int64  queue_number = 2;
+  string user_id = 3;
   google.protobuf.Timestamp createdAt = 4;
 }
