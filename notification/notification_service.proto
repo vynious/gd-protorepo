@@ -12,7 +12,7 @@ service NotificationService {
 }
 
 message CreateNotificationRequest {
-  optional queue.Ticket user_ticket = 1;
+  queue.Ticket user_ticket = 1;
   optional int64 current_queue_number = 2;
   string notification_type = 3;
 }
