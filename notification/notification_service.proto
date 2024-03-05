@@ -2,6 +2,8 @@ syntax = "proto3";
 
 
 import "notification/notification_message.proto";
+import "queue/queue_message.proto";
+
 package notification;
 option go_package = "/proto_files/notification"; //REPLACE WITH YOUR GITHUB PROJECT DIRECTORY PATH
 
@@ -10,9 +12,9 @@ service NotificationService {
 }
 
 message CreateNotificationRequest {
-  string telegram_handle = 1;
-  string notification_type = 2;
-  string content = 3;
+  optional queue.Ticket user_ticket = 1;
+  optional int64 current_queue_number = 2;
+  string notification_type = 3;
 }
 
 message CreateNotificationResponse {
