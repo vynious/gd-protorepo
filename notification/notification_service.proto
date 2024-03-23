@@ -3,12 +3,18 @@ syntax = "proto3";
 
 import "notification/notification_message.proto";
 import "queue/queue_message.proto";
+import "google/api/annotations.proto";
 
 package notification;
 option go_package = "/proto_files/notification"; //REPLACE WITH YOUR GITHUB PROJECT DIRECTORY PATH
 
 service NotificationService {
-  rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse) {};
+  rpc CreateNotification(CreateNotificationRequest) returns (CreateNotificationResponse) {
+    option (google.api.http) = {
+      delete: "/api/notification"
+      body: "*"
+    };
+  };
 }
 
 message CreateNotificationRequest {

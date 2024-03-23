@@ -4,13 +4,24 @@ package booking;
 
 import "google/protobuf/timestamp.proto";
 import "booking/booking_message.proto";
+import "google/api/annotations.proto";
 
 option go_package = "/proto_files/booking";
 
 
 service BookingService {
-  rpc CreateBooking (CreateBookingRequest) returns (CreateBookingResponse) {}
-  rpc CancelBooking (CancelBookingRequest) returns (CancelBookingResponse) {}
+  rpc CreateBooking (CreateBookingRequest) returns (CreateBookingResponse) {
+    option (google.api.http) = {
+      post: "/api/booking"
+      body: "*"
+    };
+  }
+  rpc CancelBooking (CancelBookingRequest) returns (CancelBookingResponse) {
+    option (google.api.http) = {
+      delete: "/api/booking/{id}"
+      body: "*"
+    };
+  }
 }
 
 message CreateBookingRequest {

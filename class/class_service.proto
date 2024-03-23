@@ -3,11 +3,17 @@ syntax = 'proto3';
 package class;
 option go_package = "/proto/class";
 
+import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "class/class_message.proto";
 
 service ClassService {
-  rpc CreateClass (CreateClassRequest) returns (CreateClassResponse) {}
+  rpc CreateClass (CreateClassRequest) returns (CreateClassResponse) {
+    option (google.api.http) = {
+      delete: "/api/class"
+      body: "*"
+    };
+  }
 }
 
 message CreateClassRequest {
