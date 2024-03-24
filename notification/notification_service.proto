@@ -20,7 +20,6 @@ service NotificationService {
 message CreateNotificationRequest {
   optional queue.Ticket user_ticket = 1;
   optional int64 current_queue_number = 2;
-  string telegram_handle = 3;
   string notification_type = 4;
 }
 
