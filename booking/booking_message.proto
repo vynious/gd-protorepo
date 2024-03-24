@@ -1,13 +1,68 @@
-syntax="proto3";
+
+
+syntax = "proto3";
 
 package booking;
 
 import "google/protobuf/timestamp.proto";
-import "class/class_message.proto";
+option go_package = "/proto_files/booking";
 
+// The Booking message remains unchanged
 message Booking {
   string id = 1;
   string user_id = 2;
   string class_id = 3;
   google.protobuf.Timestamp created_at = 4;
+}
+
+// Define request and response messages for new operations
+message CreateBookingRequest {
+  string user_id = 1;
+  string class_id = 2;
+}
+
+message CreateBookingResponse {
+  Booking booking = 1;
+}
+
+message CancelBookingRequest {
+  string id = 1; // booking ID
+}
+
+message CancelBookingResponse {}
+
+message ListBookingsRequest {
+  string user_id = 1; // Optional: filter by user_id if provided
+}
+
+message ListBookingsResponse {
+  repeated Booking bookings = 1;
+}
+
+message GetBookingRequest {
+  string id = 1; // booking ID
+}
+
+message GetBookingResponse {
+  Booking booking = 1;
+}
+
+message GetBookingByUserRequest {
+  string user_id = 1; // user ID
+}
+
+message GetBookingByUserResponse {
+  repeated Booking bookings = 1;
+}
+
+
+message UpdateBookingRequest {
+  string id = 1;
+  string class_id = 2; // Assuming you want to update only the class_id
+  // If you want to be able to update the user_id too, uncomment the following line:
+  string user_id = 3;
+}
+
+message UpdateBookingResponse {
+  Booking booking = 1;
 }
