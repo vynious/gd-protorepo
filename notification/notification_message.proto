@@ -6,7 +6,7 @@ import "google/protobuf/timestamp.proto";
 
 message Notification {
   string id = 1;
-  string telegram_handle = 2;
+  string user_id = 2;
   string notification_type = 3;
   string content = 4;
   google.protobuf.Timestamp created_at = 5;
